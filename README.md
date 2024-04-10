@@ -1,3 +1,4 @@
+
 ### 使用
 npm install
 
@@ -5,6 +6,9 @@ npm run start
 
 
 ### 背景
+
+![image](./assets/ui.gif)
+
 期望用ECharts实现——鼠标可以进入图表的tooltip框，并点击其中的内容进行交互
 
 
