@@ -39,8 +39,10 @@ export const getBarOptions = () => {
           initializeData()
         }
         window.tooltipSpace.lastDataIndex = dataIndex
-        const list = params[0]?.data?.list ?? []
-        const item = (color, value, index) => {
+        const item = (param, index) => {
+          const list = param?.data?.list ?? []
+          const color = chartColors[index]
+          const value = param?.value
           return `
             <div style="display: flex; justify-content: space-between;">
               <div style="display: flex; width: 70px; align-items: center">
@@ -59,7 +61,7 @@ export const getBarOptions = () => {
         return `
           <div style="text-align: left; line-height: 25px">
             <div>${params[0]?.axisValue}</div>
-            ${params.map((param, paramIndex) => item(chartColors[paramIndex], param?.value, paramIndex)).join("")}
+            ${params.map((param, paramIndex) => item(param, paramIndex)).join("")}
           </div>
         `
       },
